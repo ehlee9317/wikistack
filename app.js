@@ -7,6 +7,7 @@ const wikiRouter = require("./routes/wiki.js");
 const userRouter = require("./routes/users.js");
 
 const { db, Page, User } = require("./models");
+const router = require("./routes/wiki.js");
 
 db.authenticate().then(() => {
   console.log("connected to the database");
@@ -17,6 +18,8 @@ app.use("/wiki", wikiRouter);
 app.get("/", (req, res) => {
   res.send(indexViews.main());
 });
+
+
 
 const PORT = 3000;
 
